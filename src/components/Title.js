@@ -1,7 +1,11 @@
 import React from "react";
 
-const Title = () => {
-  return <h1>Day 2 Task</h1>;
+const Title = (props) => {
+  return (
+    <h1>
+      My name is {props.name} {props.surName}
+    </h1>
+  );
 };
 
 export default Title;
