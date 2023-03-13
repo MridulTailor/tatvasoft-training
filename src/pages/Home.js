@@ -7,12 +7,22 @@ class Home extends Component {
       title: "Welcome Visitor",
       description: "This is the description of the website",
     };
+    // ====third way to bind the clickHandler====
+    this.changeTitle = this.changeTitle.bind(this);
   }
-  changeTitle() {
+  // changeTitle() {
+  //   this.setState({
+  //     title: "Welcome Mridul",
+  //   });
+  // }
+
+  // ====fourth way to bind the clickHandler====
+  changeTitle = () => {
     this.setState({
       title: "Welcome Mridul",
     });
-  }
+  };
+
   render() {
     return (
       <div>
@@ -20,7 +30,15 @@ class Home extends Component {
         <Title title={this.state.title} description={this.state.description} />
         {/* <Title name="mriduL" surName="tailoR" />
         <Title name="mRidul" surName="tAilor" /> */}
-        <button onClick={() => this.changeTitle()}>Change Text</button>
+
+        {/* ====one way to bind the clickHandler==== */}
+        {/* <button onClick={() => this.changeTitle()}>Change Text</button> */}
+
+        {/* ====another way to bind the clickHandler==== */}
+        {/* <button onClick={this.changeTitle.bind(this)}>Change Text</button> */}
+
+        {/* ====third way to bind the clickHandler==== */}
+        <button onClick={this.changeTitle}>Change Text</button>
       </div>
     );
   }
