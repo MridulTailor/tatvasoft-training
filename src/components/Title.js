@@ -1,13 +1,13 @@
 import React from "react";
 
-const Title = (props) => {
+const Title = ({ title, description }) => {
   return (
     <div>
       <h1>
         {/* My name is {props.name} {props.surName} */}
-        {props.info.title}
+        {title}
       </h1>
-      <h1>{props.info.description}</h1>
+      <h1>{description}</h1>
     </div>
   );
 };
